@@ -1,0 +1,95 @@
+# The whole program ya scallywags!
+<program> ::= {<external-declaration>}*
+
+# Everything be one or the other!
+<external-declaration> ::= <function-definition>
+                         | <declaration>
+
+# Here be the canon factory!
+<function-definition> ::= "canon" <identifier> "fires" <container-specifier> <parameter-type-list> <compound-statement>
+
+# 'Ere be what ye be puttin' in the canon!
+<parameter-type-list> ::= {"with" <parameter-list>}?
+
+# Ye fir' shir be puttin somethin' in the canon!
+<parameter-list> ::= <parameter-declaration>
+                   | <parameter-list> "an" <parameter-declaration> 
+
+# 'Ere be a single item put in the canon
+<parameter-declaration> ::= <container-specifier> <identifier>
+
+# This is practically an array
+<container-specifier> ::= <type-specifier>
+                        | "plank" <type-specifier>
+
+# Ere' be the types of fodder!
+<type-specifier> ::= "naught"
+                   | "tally"
+                   | "scroll"
+
+# Here be the inner workins' of a canon!
+<compound-statement> ::= { {<declaration>}* {<statement>}* }
+
+# Here be a declaration of something, either a variable or an array
+# Arrays cannot be explicitly initialized, but all elements are initialized to 0 or "" (NULL)
+<declaration> ::= <type-specifier> <declarator> "!"
+                | "plank" <expression> <type-specifier> "!"
+
+# How a variable is declared (not arrays)
+<declarator> ::= <identifier>
+               | <identifier> "is" <expression>
+
+# List of expressions used only for calling functions (firing canons!)
+<expression-list> ::= <expression>
+                    | <expression-list> "an" <expression>
+
+# Base expression (assignment expression, evaluates to the value assigned)
+<expression> ::= <assignment-expression>
+
+# Conditional expression
+<assignment-expression> ::= <logical-or-expression>
+                          | <identifier> "is" <expression>
+
+<logical-or-expression> ::= <logical-and-expression>
+                          | <logical-or-expression> "er" <logical-and-expression>
+
+<logical-and-expression> ::= <equality-expression>
+                           | <logical-and-expression> "n" <equality-expression>
+
+<equality-expression> ::= <relational-expression>
+                        | <equality-expression> "be" <relational-expression>
+                        | <equality-expression> "benot" <relational-expression>
+
+<relational-expression> ::= <additive-expression>
+                          | <relational-expression> "bemorthan" <additive-expression>
+                          | <relational-expression> "belessthan" <additive-expression>
+
+<additive-expression> ::= <multiplicative-expression>
+                        | <additive-expression> "bestow" <multiplicative-expression>
+                        | <additive-expression> "forkover" <multiplicative-expression>
+
+<multiplicative-expression> ::= <postfix-expression>
+                              | <multiplicative-expression> "stack'em" <postfix-expression>
+                              | <multiplicative-expression> "doleout" <postfix-expression>
+                              | <multiplicative-expression> "dregs" <postfix-expression>
+
+<postfix-expression> ::= <primary-expression>
+                       | <identifier> "at" <expression>
+                       | "fire" <identifier> {"with" <expression-list>}?
+
+<primary-expression> ::= <identifier>
+                       | <constant>
+                       | <string>
+                       | "tisnot" <expression>
+                       | "(" <expression> ")"
+                       | <embedded-function-expression> "with" <expression-list>
+
+# Built in functions:
+#   yohoho - returns a random number between parameter 1 and parameter 2 (inclusive)
+#   swabthedeck - Sets every element of each array and variable to 0 or "" (NULL)
+#   stirthebilge - Randomly shuffle the elements of an array using the fisher yates shuffle
+#   
+<embedded-function-expression> ::= "yohoho"
+                                |  "swabthedeck"
+                                |  "stirthebilge"
+

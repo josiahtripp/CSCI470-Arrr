@@ -1,0 +1,40 @@
+"Dabloon" - Boolean keyword
+"Tally" - Integer keyword
+"Scroll" - String keyword
+"Canon" - Function keyword (definition)
+"Squawk" - Output keyword
+"AvastYe" - Input method
+"Aye" - If statement keyword
+"Scurvy" - Else statement
+"Plank" - Array definition keyword
+"er" - logical or keyword
+"n" - logical and keyword
+"Walks" - iteration keyword (through array) {tally x! Plank tally 20 y! x walks y}
+"!" - line termination
+"Fire" - call function {
+			Canon Dabloon isOdd(Tally x)
+			{
+				Aye(x Left 2 is 1)
+				{
+					Booty Tis!
+				}
+				Scurvy
+				{
+					Booty TisNot!
+				}
+
+			}
+			Tally number! 
+			AvastYe number! 
+			Squawk Fire isOdd(number)!}
+"Take" - subtract keyword
+"Give" - addition keyword
+"Split" - division keyword
+"Times" - multiplication keyword
+"Left" - Modulus
+"be" - Comparison keyword
+"is" - Assignment keyword
+"Booty" - function return keyword
+"Tis" - True keyword
+"TisNot" - False keyword
+
