@@ -92,4 +92,5 @@
 <embedded-function-expression> ::= "yohoho"
                                 |  "swabthedeck"
                                 |  "stirthebilge"
-
+                                |  "squawk"
+                                |  "avast'ye"
