@@ -94,3 +94,18 @@
                                 |  "stirthebilge"
                                 |  "squawk"
                                 |  "avast'ye"
+
+<statement> ::= <expression-statement>
+              | <selection-statement>
+              | <iteration-statement>
+              | <jump-statement>
+
+<selection-statement> ::= "aye" "(" <expression> ")" <statement>
+                        | "aye" "(" <expression> ")" <statement> "scury" <statement>
+
+<iteration-statement> ::= "in'voyage" "(" <statement> ")" <statement>
+                        | "fer'all" "(" {<expression}? ! {<expression>}? ! {<expression>}? ")" <statement>
+
+<expression-statement> ::= {<expression>}?
+
+<jump-statement> ::= "booty" {<expression>}?
