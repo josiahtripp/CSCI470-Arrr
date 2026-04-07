@@ -49,6 +49,7 @@
 # Conditional expression
 <assignment-expression> ::= <logical-or-expression>
                           | <identifier> "is" <expression>
+                          | <identifier> "at" <expression> "is" <expression>
 
 <logical-or-expression> ::= <logical-and-expression>
                           | <logical-or-expression> "er" <logical-and-expression>
@@ -86,11 +87,9 @@
 
 # Built in functions:
 #   yohoho - returns a random number between parameter 1 and parameter 2 (inclusive)
-#   swabthedeck - Sets every element of each array and variable to 0 or "" (NULL)
 #   stirthebilge - Randomly shuffle the elements of an array using the fisher yates shuffle
 #   
 <embedded-function-expression> ::= "yohoho"
-                                |  "swabthedeck"
                                 |  "stirthebilge"
                                 |  "squawk"
                                 |  "avast'ye"
