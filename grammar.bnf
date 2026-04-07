@@ -100,7 +100,7 @@
               | <jump-statement>
 
 <selection-statement> ::= "aye" "(" <expression> ")" <compound-statement>
-                        | "aye" "(" <expression> ")" <compound-statement> "scury" <compound-statement>
+                        | "aye" "(" <expression> ")" <compound-statement> "scurvy" <compound-statement>
 
 <iteration-statement> ::= "in'voyage" "(" <statement> ")" <compound-statement>
                         | "fer'all" "(" {<expression}? ! {<expression>}? ! {<expression>}? ")" <compound-statement>
