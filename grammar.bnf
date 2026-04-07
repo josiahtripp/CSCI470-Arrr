@@ -33,7 +33,7 @@
 # Here be a declaration of something, either a variable or an array
 # Arrays cannot be explicitly initialized, but all elements are initialized to 0 or "" (NULL)
 <declaration> ::= <type-specifier> <declarator> "!"
-                | "plank" <expression> <type-specifier> "!"
+                | "plank" <expression> <type-specifier> <identifier> "!"
 
 # How a variable is declared (not arrays)
 <declarator> ::= <identifier>
@@ -83,7 +83,7 @@
                        | <string>
                        | "tisnot" <expression>
                        | "(" <expression> ")"
-                       | <embedded-function-expression> "with" <expression-list>
+                       | <embedded-function-expression> {"with" <expression-list>}?
 
 # Built in functions:
 #   yohoho - returns a random number between parameter 1 and parameter 2 (inclusive)
@@ -99,11 +99,11 @@
               | <iteration-statement>
               | <jump-statement>
 
-<selection-statement> ::= "aye" "(" <expression> ")" <statement>
-                        | "aye" "(" <expression> ")" <statement> "scury" <statement>
+<selection-statement> ::= "aye" "(" <expression> ")" <compound-statement>
+                        | "aye" "(" <expression> ")" <compound-statement> "scury" <compound-statement>
 
-<iteration-statement> ::= "in'voyage" "(" <statement> ")" <statement>
-                        | "fer'all" "(" {<expression}? ! {<expression>}? ! {<expression>}? ")" <statement>
+<iteration-statement> ::= "in'voyage" "(" <statement> ")" <compound-statement>
+                        | "fer'all" "(" {<expression}? ! {<expression>}? ! {<expression>}? ")" <compound-statement>
 
 <expression-statement> ::= {<expression>}?
 
